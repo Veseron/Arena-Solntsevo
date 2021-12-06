@@ -1,3 +1,7 @@
-body {
-    background-color: #000;
-}
+// Import libs
+@import './common/normalize.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Import base
+@import './mixins/variables.scss';
+@import './mixins/mixins.scss';
