@@ -1,10 +1,19 @@
 header.header
-    .header__logo
-        img(src="", alt="")
-    .header__social
-        a(href="#").header__social-item 
-        a(href="#").header__social-item 
-        a(href="#").header__social-item
-        a(href="tel:+74952344584").header__social-item.header__social-item--tel +7 (495) 234 45-84
-    .header__action
-    .header__menu
+    img(src="assets/images/logo.png", alt="")
+    .header__right
+        .header__right-part
+            a(href="#")
+                svg 
+                    use(xlink:href="assets/stack/sprite.svg#vk-icon")
+            a(href="#")
+                svg 
+                    use(xlink:href="assets/stack/sprite.svg#instagram-icon")
+            a(href="#")
+                svg 
+                    use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
+        .header__right-part
+            a(href="#").btn.btn-secondary.header__link Забронировать площадку 
+        .header__right-part
+            button.menu-btn
+                svg
+                    use(xlink:href="assets/stack/sprite.svg#burger-icon")

@@ -1,0 +1,40 @@
+.hero-section {
+    background: url('../assets/images/hero-banner.png') no-repeat;
+    background-size: cover;
+    margin-top: -120px;
+    padding: 340px 0 222px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    @media screen and (min-width: 1440px) {
+        background: url('../assets/images/hero-banner-big.png') no-repeat cover;
+    }
+    @media screen and (max-width: 991px) and (min-width: 767px) {
+        background: url('../assets/images/hero-banner-tablet.png') no-repeat cover;
+        background-position: center;
+    }
+    @media screen and (max-width: 767px) {
+        background: url('../assets/images/hero-banner-mobile.png') no-repeat cover;
+        background-position: center;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 40%;
+        display: block;
+        bottom: -10px;
+        left: 0;
+        height: 10px;
+        background-color: $secondary-color;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        display: block;
+        bottom: -10px;
+        right: 0;
+        height: 10px;
+        background-color: $dark;
+    }
+}

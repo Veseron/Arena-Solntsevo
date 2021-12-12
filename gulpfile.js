@@ -6,7 +6,9 @@ prefixer = require('gulp-autoprefixer'),
 imagemin = require('gulp-imagemin'),
 del = require('del'),
 sassGlob = require('gulp-sass-glob'),
-pug = require('gulp-pug')
+pug = require('gulp-pug'),
+svgSprite = require('gulp-svg-sprite'),
+webpack = require('webpack-stream')
 
 const config = {
     build_folder: './build/'
@@ -37,6 +39,18 @@ return src('src/assets/images/**/*')
     .pipe(dest(`${config.build_folder}/assets/images/`))
 }
 
+function sprites() {
+    return src('src/assets/sprites/**/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: `sprite.svg`
+                }
+            }
+        }))
+        .pipe(dest(`${config.build_folder}/assets/`))
+}
+
 function styles() {
     return src('src/scss/style.scss')
         .pipe(sassGlob())
@@ -54,16 +68,14 @@ function clearDist() {
     return del(config.build_folder)
 }
 
-// function fonts() {
-//     return src('./assets/fonts/**/*.{eot,svg,ttf,woff,woff2}') 
-//         .pipe(dest(`${config.build_folder}/assets/fonts/`))
-// }
-
 function scripts() {
     return src([
-        'node_modules/jquery/dist/jquery.js',
+        // 'node_modules/jquery/dist/jquery.js',
         'src/js/**/*.js'
     ])
+        .pipe(webpack({
+            mode: 'development'
+        }))
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(dest(`${config.build_folder}/js`))
@@ -74,6 +86,12 @@ function html() {
     return src(['src/markup/**/*.pug'])
         .pipe(pug())
         .pipe(dest(config.build_folder))
+        .pipe(browserSync.stream())
+}
+
+function fonts() {
+    return src(['src/assets/fonts/**/*'])
+        .pipe(dest(`${config.build_folder}/assets/fonts/`))
         .pipe(browserSync.stream())
 }
 
@@ -90,6 +108,8 @@ exports.scripts = scripts
 exports.images = images
 exports.clearDist = clearDist
 exports.html = html
+exports.sprites = sprites
+exports.fonts = fonts
 
-exports.build = series(html, images, styles, scripts)
-exports.default = parallel(styles, html, scripts, sync, watching)
+exports.build = series(html, images, fonts, styles, scripts, sprites)
+exports.default = parallel(styles, html, images, sprites, fonts, scripts, sync, watching)
