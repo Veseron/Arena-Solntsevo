@@ -56,6 +56,10 @@
             }
         }
     }
+    &--single &__item::before {
+        border-top: 110px solid #fff;
+        border-left: 110px solid transparent;
+    }
 }
 
 .services-list-empty {

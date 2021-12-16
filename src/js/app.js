@@ -26,6 +26,14 @@ $(function() {
         ]
     });
 
+    $('.js-services-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: $('.js-services-arrow-next'),
+        prevArrow: $('.js-services-arrow-prev'),
+        infinite: false,
+    });
+
     $('.js-menu-trigger').on('click', function(e) {
         e.preventDefault()
         if ($('.js-menu').hasClass('active')) {
