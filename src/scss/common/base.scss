@@ -106,3 +106,23 @@ h4, .h4 {
     padding: 16px;
     border-left: 8px solid $secondary-color;
 }
+.marked-list {
+    padding-left: 0;
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 12px;
+        &::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            background: url('../assets/stack/sprite.svg#list-mark') no-repeat;
+            background-size: cover;
+        }
+    }
+}
