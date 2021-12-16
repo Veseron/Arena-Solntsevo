@@ -81,3 +81,15 @@ h4, .h4 {
         min-height: 396px;
     }
 }
+.video-block {
+    max-height: 565px;
+    @media screen and (max-width: 1400px) {
+        max-height: 480px;
+    }
+    @include tablet {
+        max-height: 360px;
+    }
+    @include mobile {
+        max-height: 240px;
+    }
+}

@@ -1,10 +1,12 @@
 .header {
-    background-color: rgba(41, 52, 67, .24);
     display: flex;
     justify-content: space-between;
     max-height: 102px;
     position: relative;
     z-index: 1;
+    &.--blur {
+        background-color: rgba(41, 52, 67, .24);
+    }
     @include tablet {
         max-height: 72px;
     }
@@ -23,8 +25,19 @@
             flex: 0 0 auto;
             height: 100%;
             align-items: center;
+            svg {
+                color: $dark;
+            }
             a {
                 margin-right: 25px;
+                svg {
+                    transition: ease-in-out .3s;
+                }
+                &:hover {
+                    svg {
+                        color: $primary-color;
+                    }
+                }
             }
         }
     }
@@ -34,7 +47,7 @@
     }
     &__tel {
         text-decoration: none;
-        color: #fff;
+        color: $dark;
         font-weight: 700;
         font-size: 16px;
         margin-right: 0;
@@ -50,6 +63,12 @@
         @include mobile {
             max-width: 97px;
         }
+    }
+    &.--blur &__tel {
+        color: #fff;
+    }
+    &.--blur svg {
+        color: #fff;
     }
 }
 .menu-btn {

@@ -84,7 +84,7 @@ function scripts() {
 
 function html() {
     return src(['src/markup/**/*.pug'])
-        .pipe(pug())
+        .pipe(pug({pretty: true}))
         .pipe(dest(config.build_folder))
         .pipe(browserSync.stream())
 }

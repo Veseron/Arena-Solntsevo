@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        block head
+            include ./partials/head.pug
+    body
+        block header
+            include ./partials/header.pug
+            +header()
+
+        block main-content
+            include ./components/heading.pug
+            +heading('Арена', 'Ледовая Арена Солнцево – это современный спортивный комплекс, включающий в себя арены и залы для комфортного и продуктивного занятия спортом. На территории дворца расположены:')
+
+        block footer
+            include ./partials/footer.pug

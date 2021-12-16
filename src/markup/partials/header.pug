@@ -1,51 +1,52 @@
-header.header
-    img(src="assets/images/logo.png", alt="").header__logo
-    .header__right
-        .header__right-part.d-none.d-md-flex
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#vk-icon")
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#instagram-icon")
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
-            a(href="tel:+74952344584").header__tel +7 (495) 234 45-84
-        .header__right-part.d-none.d-lg-flex
-            a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 
-        .header__right-part
-            button.menu-btn.js-menu-trigger
-                svg
-                    use(xlink:href="assets/stack/sprite.svg#burger-icon")
-nav.sidemenu.js-menu
-    a(href="#").sidemenu__close.js-menu-close
-        svg 
-            use(xlink:href="assets/stack/sprite.svg#close")
-    .sidemenu__list
-        .sidemenu__list-item.d-none.d-md-block.d-lg-none
-            a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 
-        .sidemenu__list-item
-            a(href="#") Арена
-        .sidemenu__list-item
-            a(href="#") Школа
-        .sidemenu__list-item
-            a(href="#") Услуги
-        .sidemenu__list-item
-            a(href="#") Новости
-        .sidemenu__list-item
-            a(href="#") Контакты
-        .sidemenu__list-item.d-block.d-md-none
-            a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку
-        .sidemenu__list-item.d-flex.d-md-none.sidemenu__list-item--icons
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#vk-icon")
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#instagram-icon")
-            a(href="#")
-                svg 
-                    use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
-        .sidemenu__list-item.d-block.d-md-none 
-            a(href="tel:+74952344584").header__tel +7 (495) 234 45-84
+mixin header(blur)
+    header.header(class=typeof blur === "undefined" ? undefined : "--blur")
+        img(src="assets/images/logo.png", alt="").header__logo
+        .header__right
+            .header__right-part.d-none.d-md-flex
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#vk-icon")
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#instagram-icon")
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
+                a(href="tel:+74952344584").header__tel +7 (495) 234 45-84
+            .header__right-part.d-none.d-lg-flex
+                a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 
+            .header__right-part
+                button.menu-btn.js-menu-trigger
+                    svg
+                        use(xlink:href="assets/stack/sprite.svg#burger-icon")
+    nav.sidemenu.js-menu
+        a(href="#").sidemenu__close.js-menu-close
+            svg 
+                use(xlink:href="assets/stack/sprite.svg#close")
+        .sidemenu__list
+            .sidemenu__list-item.d-none.d-md-block.d-lg-none
+                a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 
+            .sidemenu__list-item
+                a(href="#") Арена
+            .sidemenu__list-item
+                a(href="#") Школа
+            .sidemenu__list-item
+                a(href="#") Услуги
+            .sidemenu__list-item
+                a(href="#") Новости
+            .sidemenu__list-item
+                a(href="#") Контакты
+            .sidemenu__list-item.d-block.d-md-none
+                a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку
+            .sidemenu__list-item.d-flex.d-md-none.sidemenu__list-item--icons
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#vk-icon")
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#instagram-icon")
+                a(href="#")
+                    svg 
+                        use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
+            .sidemenu__list-item.d-block.d-md-none 
+                a(href="tel:+74952344584").header__tel +7 (495) 234 45-84
