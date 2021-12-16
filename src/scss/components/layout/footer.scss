@@ -1,0 +1,80 @@
+.footer {
+    padding:  32px 0;
+    background-color: #F9F9F9;
+    & .container {
+        position: relative;
+    }
+    &__top {
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        @include desktop {
+            padding-bottom: 32px;
+            flex-direction: row;
+            gap: 80px;
+        }
+    }
+    &__link {
+        color: $gray;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+        border-top: 1px solid $light-gray;
+        @include desktop {
+            flex-direction: row;
+            gap: 100px;
+            padding-top: 0;
+            border-top: none;
+        }
+        &-text {
+            color: $gray;
+            font-size: 16px;
+            margin-bottom: 24px;
+            @include desktop {
+                margin-bottom: 0;
+            }
+            &:first-child {
+                order: 2;
+                @include desktop {
+                    order: 1;
+                }
+            }
+            &:last-child {
+                order: 1;
+                @include desktop {
+                    order: 2;
+                }
+            }
+        }
+    }
+    &__to-top {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $light-gray;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        svg {
+            width: 12px;
+            height: 6px;
+        }
+    }
+}

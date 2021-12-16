@@ -50,4 +50,9 @@ $(function() {
         $('.js-menu').removeClass('active')
         $('body').removeClass('fixed')
     })
+
+    $('.js-to-top').on('click', function(e) {
+        e.preventDefault()
+        $('html, body').animate({ scrollTop: 0 }, 1000);
+    })
 })
