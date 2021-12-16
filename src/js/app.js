@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import ymaps from 'ymaps'
 import 'slick-carousel'
 
 $(function() {
@@ -55,4 +56,23 @@ $(function() {
         e.preventDefault()
         $('html, body').animate({ scrollTop: 0 }, 1000);
     })
+
+    ymaps
+        .load('https://api-maps.yandex.ru/2.1.40/?apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=en_RU&')
+        .then(maps => {
+            const map = new maps.Map(document.getElementsByClassName('js-maps')[0], {
+                center: [55.641964, 37.402288],
+                zoom: 12
+            })
+            const mapMark = new ymaps.GeoObject({
+                geometry: {
+                  type: "Point",
+                  coordinates: map.center
+                }
+            });
+
+            map.geoObjects
+                .add(mapMark)
+        })
+        .catch(error => console.log(error))
 })

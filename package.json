@@ -31,7 +31,8 @@
     "jquery": "^3.6.0",
     "slick": "^1.12.2",
     "slick-carousel": "^1.8.1",
-    "webpack": "^5.65.0"
+    "webpack": "^5.65.0",
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
     "webpack-stream": "^7.0.0"
