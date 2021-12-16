@@ -19,6 +19,7 @@ h1, .h1 {
 h2, .h2 {
     font-size: 32px;
     line-height: 48px;
+    font-weight: 700;
     @include mobile {
         font-size: 30px;
         line-height: 42px;
@@ -27,6 +28,7 @@ h2, .h2 {
 h3, .h3 {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 700;
     @include mobile {
         font-weight: 20px;
         line-height: 28px;
@@ -92,4 +94,15 @@ h4, .h4 {
     @include mobile {
         max-height: 240px;
     }
+}
+.text-bold {
+    font-weight: 700;
+    color: $dark;
+}
+.text-dark {
+    color: $dark;
+}
+.note-block {
+    padding: 16px;
+    border-left: 8px solid $secondary-color;
 }

@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        block head
+            include ./partials/head.pug
+    body
+        block header
+            include ./partials/header.pug
+            +header()
+
+        block main-content
+            include ./components/school-heading.pug
+            include ./components/levels-block.pug
+
+        block footer
+            include ./partials/footer.pug
