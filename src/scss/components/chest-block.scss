@@ -1,0 +1,15 @@
+.chest-block {
+    padding: 32px 0;
+    border-bottom: 1px solid $light-gray;
+    @include desktop {
+        padding: 40px 0;
+    }
+    &:nth-child(2n) {
+        & > div:first-child {
+            order: 2;
+        }
+        & > div:last-child {
+            order: 1;
+        }
+    }
+}

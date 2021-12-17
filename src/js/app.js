@@ -26,13 +26,16 @@ $(function() {
         ]
     });
 
-    $('.js-services-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: $('.js-services-arrow-next'),
-        prevArrow: $('.js-services-arrow-prev'),
-        infinite: false,
-    });
+    $('.js-services-slider').each(function() {
+        $(this).find('.js-services-slider-list').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            nextArrow: $(this).find('.js-services-arrow-next'),
+            prevArrow: $(this).find('.js-services-arrow-prev'),
+            infinite: false,
+            lazyLoad: true,
+        })
+    })
 
     $('.js-menu-trigger').on('click', function(e) {
         e.preventDefault()

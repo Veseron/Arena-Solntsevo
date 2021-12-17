@@ -1,10 +1,11 @@
+$slick-arrow-height: 40px;
 .slick-arrow {
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
-    height: 40px;
+    height: $slick-arrow-height;
     background-color: $dark;
     transition: ease-in-out .2s;
     &:hover {
@@ -34,15 +35,17 @@
 .slick-slide {
     margin: 0 13px;
 }
-
+.slick-no-margin .slick-slide {
+    margin: 0;
+}
 .slick-arrows-block__center {
     position: absolute;
-    top: 50%;
+    top: calc(50% - #{$slick-arrow-height});
     display: block;
     width: 100%;
     .slick-arrow {
         position: absolute;
-        right: 25px;
+        right: 0;
         &.arrow-prev {
             left: 0;
         }
