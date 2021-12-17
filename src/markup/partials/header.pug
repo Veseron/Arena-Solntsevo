@@ -1,6 +1,7 @@
 mixin header(blur)
     header.header(class=typeof blur === "undefined" ? undefined : "--blur")
-        img(src="assets/images/logo.png", alt="").header__logo
+        a(href="/") 
+            img(src="assets/images/logo.png", alt="").header__logo
         .header__right
             .header__right-part.d-none.d-md-flex
                 a(href="#")
@@ -27,15 +28,15 @@ mixin header(blur)
             .sidemenu__list-item.d-none.d-md-block.d-lg-none
                 a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 
             .sidemenu__list-item
-                a(href="#") Арена
+                a(href="arena.html") Арена
             .sidemenu__list-item
-                a(href="#") Школа
+                a(href="school.html") Школа
             .sidemenu__list-item
-                a(href="#") Услуги
+                a(href="services.html") Услуги
             .sidemenu__list-item
-                a(href="#") Новости
+                a(href="/") Новости
             .sidemenu__list-item
-                a(href="#") Контакты
+                a(href="contacts.html") Контакты
             .sidemenu__list-item.d-block.d-md-none
                 a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку
             .sidemenu__list-item.d-flex.d-md-none.sidemenu__list-item--icons

@@ -20,4 +20,13 @@
     &-seondary {
         background-color: $secondary-color;
     }
+    &-white-primary {
+        color: $primary-color;
+        border: 2px solid $primary-color;
+        transition: ease-in-out .3s;
+        &:hover {
+            color: $primary-color-hover;
+            border: 2px solid $primary-color-hover;
+        }
+    }
 }
