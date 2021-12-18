@@ -4,54 +4,6 @@ body {
     line-height: 20px;
     font-family: 'Segoe UI';
 }
-h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
-    font-family: 'Circe';
-}
-h1, .h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 64px;
-    @include mobile {
-        font-size: 24px;
-        line-height: 40px;
-    }
-}
-h2, .h2 {
-    font-size: 32px;
-    line-height: 48px;
-    font-weight: 700;
-    @include mobile {
-        font-size: 30px;
-        line-height: 42px;
-    }
-}
-h3, .h3 {
-    font-size: 24px;
-    line-height: 32px;
-    @include mobile {
-        font-weight: 20px;
-        line-height: 28px;
-    }
-}
-h4, .h4 {
-    font-size: 18px;
-    line-height: 22px;
-}
-a {
-    text-decoration: none;
-}
-.text-primary {
-    color: $primary-color!important;
-}
-.text-secondary {
-    color: $secondary-color!important;
-}
-.text-gray {
-    color: $gray;
-}
-.caption {
-    font-size: 12px;
-}
 .section {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -75,11 +27,6 @@ a {
         padding-bottom: 0;
     }
 }
-.container {
-    @media screen and (min-width: 1600px) {
-        max-width: 1542px;
-    }
-}
 .maps {
     @include desktop {
         min-height: 396px;
@@ -96,12 +43,6 @@ a {
     @include mobile {
         max-height: 240px;
     }
-}
-.text-bold {
-    font-weight: 700;
-}
-.text-dark {
-    color: $dark;
 }
 .note-block {
     padding: 16px;
