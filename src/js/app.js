@@ -74,8 +74,12 @@ $(function() {
             .then(maps => {
                 const map = new maps.Map(this, {
                     center: [55.641964, 37.402288],
-                    zoom: 12
+                    zoom: 12,
+                    controls: []
                 })
+                return map
+            })
+            .then(map => {
                 const mapMark = new ymaps.GeoObject({
                     geometry: {
                     type: "Point",
