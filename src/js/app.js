@@ -68,6 +68,18 @@ $(function() {
         $('html, body').animate({ scrollTop: 0 }, 1000);
     })
 
+    $('.js-tabs').each(function() {
+        let self = this
+        $(this).find('.js-tabs-nav').on('click', function(e) {
+            e.preventDefault()
+            $(self).find('.js-tabs-nav').removeClass('active')
+            $(this).addClass('active')
+
+            $(self).find('.js-tabs-content').removeClass('active')
+            $(self).find(`.js-tabs-content[data-item="${$(this).attr('data-target')}"]`).addClass('active')
+        })
+    })
+
     $('.js-maps').each(function() {
         ymaps
             .load('https://api-maps.yandex.ru/2.1.40/?apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=en_RU&')

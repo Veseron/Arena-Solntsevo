@@ -2,15 +2,19 @@ section.section
     .container 
         .row.mb-5.js-tabs.tabs
             .col-12.col.md-6.col-lg-4
-                .tabs-nav.js-tabs-nav
-                    .tabs-nav
-                    .tabs-nav
-                .tabs-content.js-tabs-content
-                    .tabs-content__item(data-item="1")
-                    .tabs-content__item(data-item="2")
+                .tabs-nav
+                    .tabs-nav__item.js-tabs-nav.active(data-target="1") Пешком
+                    .tabs-nav__item.js-tabs-nav(data-target="2") На автомобиле
+                .tabs-content
+                    .text-gray.fs-16.mt-4.tabs-content__item.js-tabs-content.active(data-item="1") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
+                    .text-gray.fs-16.mt-4.tabs-content__item.js-tabs-content(data-item="2") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
                     
                 
-            .col-12.col.md-6.col-lg-8.js-maps.maps
+            .col-12.col.md-6.col-lg-8
+                .tabs-content__item.active.js-tabs-content(data-item="1")
+                    img.img-fluid(src="assets/images/map-1.png", alt="alt")
+                .tabs-content__item.js-tabs-content(data-item="2")
+                    img.img-fluid(src="assets/images/map-1.png", alt="alt")
 
         .row 
             .col-12.col.md-6.col-lg-4
