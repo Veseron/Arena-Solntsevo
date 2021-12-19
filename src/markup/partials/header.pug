@@ -4,15 +4,7 @@ mixin header(blur)
             img(src="assets/images/logo.png", alt="").header__logo
         .header__right
             .header__right-part.d-none.d-md-flex
-                a(href="#")
-                    svg 
-                        use(xlink:href="assets/stack/sprite.svg#vk-icon")
-                a(href="#")
-                    svg 
-                        use(xlink:href="assets/stack/sprite.svg#instagram-icon")
-                a(href="#")
-                    svg 
-                        use(xlink:href="assets/stack/sprite.svg#whatsapp-icon")
+                include ../components/social-links.pug
                 a(href="tel:+74952344584").header__tel +7 (495) 234 45-84
             .header__right-part.d-none.d-lg-flex
                 a(href="#").btn.btn-primary.btn-uppercase.header__link Забронировать площадку 

@@ -1,0 +1,11 @@
+.social-links {
+    display: flex;
+    a {
+        margin-right: 24px;
+    }
+    svg {
+        max-width: 24px;
+        max-height: 24px;
+        color: $dark;
+    }
+}
