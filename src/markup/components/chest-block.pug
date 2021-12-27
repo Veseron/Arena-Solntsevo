@@ -1,7 +1,7 @@
 section.section 
     .container 
         .row.chest-block
-            .col-12.col-md-6 
+            .col-12.col-md-6.mb-3
                 .h3.mb-4.text-secondary.mt-2 Аренда большого льда
                 .text-gray.fs-16.mb-3 
                     | Подробное описание большого льда. 
@@ -15,5 +15,21 @@ section.section
                     li.text-gray.fs-16 Характеристики
                 .btn.btn-white-primary.btn-uppercase Забронировать площадку
             .col-12.col-md-6
-                include ./services-slider.pug
-                +services-slider('', '', 'assets/images/services-list/img-3.png')
+                .serices-list.position-relative.slick-no-margin.js-services-slider
+                    .js-services-slider-list
+                        .col-12.services-list__item
+                            a(href="/")
+                                img(src='assets/images/services-list/img-2.png', alt="").img-fluid
+                        .col-12.services-list__item
+                            a(href="/")
+                                img(src='assets/images/services-list/img-2.png', alt="").img-fluid
+                        .col-12.services-list__item
+                            a(href="/")
+                                img(src='assets/images/services-list/img-2.png', alt="").img-fluid
+                    .slick-arrows-block.slick-arrows-block__center.slick-arrows-block__mobile-bottom
+                        .slick-arrow.arrow-prev.js-services-arrow-prev
+                            svg 
+                                use(xlink:href="assets/stack/sprite.svg#arrow")
+                        .slick-arrow.arrow-next.js-services-arrow-next
+                            svg 
+                                use(xlink:href="assets/stack/sprite.svg#arrow")
