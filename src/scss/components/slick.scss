@@ -55,6 +55,16 @@ $slick-arrow-height: 40px;
     display: flex;
     justify-content: flex-end;
     margin-top: 25px;
+    &__mobile-bottom {
+        @include mobile {
+            position: relative!important;
+            display: flex!important;
+            justify-content: flex-end!important;
+            .slick-arrow {
+                position: initial!important;
+            }
+        }
+    }
 }
 .slick-slide {
     margin: 0 13px;

@@ -55,10 +55,24 @@
                 border-left: 24px solid transparent;
             }
         }
-    }
-    &--single &__item::before {
-        border-top: 110px solid #fff;
-        border-left: 110px solid transparent;
+        &--single {
+            &::before {
+                border-top: 115px solid #fff;
+                border-left: 115px solid transparent; 
+                @include mobile {
+                    border-top: 45px solid #fff;
+                    border-left: 45px solid transparent;
+                }       
+            }            
+        }
+        &--single &-title {
+            @include mobile {
+                position: initial;
+                background-color: #fff;
+                color: $dark;
+                padding-top: 16px;
+            }
+        }
     }
 }
 
