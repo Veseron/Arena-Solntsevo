@@ -8,6 +8,7 @@
         padding-bottom: 24px;
         display: flex;
         flex-direction: column;
+        position: relative;
         @include tablet {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -70,12 +71,16 @@
         background-color: $light-gray;
         border-radius: 50%;
         position: absolute;
-        right: 0;
+        right: 15px;
         top: 0;
         svg {
             color: #fff;
             width: 12px;
             height: 6px;
+        }
+        @include mobile {
+            top: initial;
+            bottom: 48px;
         }
     }
 }
