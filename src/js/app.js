@@ -82,7 +82,7 @@ $(function() {
 
     $('.js-maps').each(function() {
         ymaps
-            .load('https://api-maps.yandex.ru/2.1.40/?apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=en_RU&')
+            .load('https://api-maps.yandex.ru/2.1.40/?apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=ru_RU&')
             .then(maps => {
                 const map = new maps.Map(this, {
                     center: [55.641964, 37.402288],

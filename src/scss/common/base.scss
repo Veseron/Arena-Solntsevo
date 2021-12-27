@@ -68,3 +68,21 @@ body {
         }
     }
 }
+.row {
+    @include mobile {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+}
+.row > * {
+    @include mobile {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+.container {
+    @include mobile {
+        padding-left: 16px;
+        padding-left: 16px;
+    }
+}
