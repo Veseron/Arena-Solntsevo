@@ -17,6 +17,9 @@
         background: url('../assets/images/hero-banner-mobile.png') no-repeat cover;
         background-position: center;
     }
+    @include mobile {
+        padding: 220px 0 110px 0;
+    }
     &::before {
         content: "";
         position: absolute;
