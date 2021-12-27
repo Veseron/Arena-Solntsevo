@@ -1,6 +1,6 @@
 mixin header(blur)
     header.header(class=typeof blur === "undefined" ? undefined : "--blur")
-        a(href="/") 
+        a(href="/").header__logo-link 
             img(src="assets/images/logo.png", alt="").header__logo
         .header__right
             .header__right-part.d-none.d-md-flex
