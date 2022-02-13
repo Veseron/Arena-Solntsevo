@@ -9,6 +9,7 @@ $(function() {
         nextArrow: $('.js-news-arrow-next'),
         prevArrow: $('.js-news-arrow-prev'),
         infinite: false,
+        centerMode: false,
         
         responsive: [
             {
@@ -77,31 +78,36 @@ $(function() {
 
             $(self).find('.js-tabs-content').removeClass('active')
             $(self).find(`.js-tabs-content[data-item="${$(this).attr('data-target')}"]`).addClass('active')
+
+            $('.js-contacts-slider').each(function() {
+                $(this).find('.js-contacts-slider-list').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    nextArrow: $(this).find('.js-contacts-arrow-next'),
+                    prevArrow: $(this).find('.js-contacts-arrow-prev'),
+                    infinite: false,
+                    lazyLoad: true,
+                })
+            })
         })
     })
 
-    $('.js-maps').each(function() {
-        ymaps
-            .load('https://api-maps.yandex.ru/2.1.40/?apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=ru_RU&')
-            .then(maps => {
-                const map = new maps.Map(this, {
-                    center: [55.641964, 37.402288],
-                    zoom: 12,
-                    controls: []
-                })
-                return map
+    $('.js-maps').each(async function() {
+        try {
+            const maps = await ymaps.load('https://api-maps.yandex.ru/2.1/?load=package.full&apikey=38a5b311-25a9-4c36-955e-bca7691fd2fb&lang=ru_RU')
+            const map = await new maps.Map(this, {
+                center: [55.641964, 37.402288],
+                zoom: 12,
+                controls: []
             })
-            .then(map => {
-                const mapMark = new ymaps.GeoObject({
-                    geometry: {
-                    type: "Point",
-                    coordinates: map.center
-                    }
-                });
-
-                map.geoObjects
-                    .add(mapMark)
-            })
-            .catch(error => console.log(error))
+            const placemark = await new maps.Placemark([55.641964, 37.402288],
+                {
+                    iconCaption: 'Ледовая арена Солнцево'
+                },
+            )
+            map.geoObjects.add(placemark)
+        } catch(error) {
+            console.log(error)
+        }
     })
 })

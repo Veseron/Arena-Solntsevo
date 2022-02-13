@@ -6,15 +6,25 @@ section.section
                     .tabs-nav__item.js-tabs-nav.active(data-target="1") Пешком
                     .tabs-nav__item.js-tabs-nav(data-target="2") На автомобиле
                 .tabs-content
-                    .text-gray.fs-16.mt-4.tabs-content__item.js-tabs-content.active(data-item="1") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
-                    .text-gray.fs-16.mt-4.tabs-content__item.js-tabs-content(data-item="2") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
+                    .text-gray.fs-16.mb-3.mt-4.tabs-content__item.js-tabs-content.active(data-item="1") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
+                    .text-gray.fs-16.mt-4.mb-3.tabs-content__item.js-tabs-content(data-item="2") Подробное описание как добраться до Ледовой Арены Солнцево с ближайшего выхода метро пешком. Справа будет изображение с метками.
                     
                 
             .col-12.col.md-6.col-lg-8
                 .tabs-content__item.active.js-tabs-content(data-item="1")
                     img.img-fluid(src="assets/images/map-1.png", alt="alt")
                 .tabs-content__item.js-tabs-content(data-item="2")
-                    img.img-fluid(src="assets/images/map-1.png", alt="alt")
+                    .serices-list.position-relative.slick-no-margin.js-contacts-slider
+                        .js-contacts-slider-list 
+                            img(src="assets/images/map-2.png", alt="").img-fluid
+                            img(src="assets/images/map-3.png", alt="").img-fluid
+                        .slick-arrows-block.slick-arrows-block__center.slick-arrows-block__mobile-bottom
+                            .slick-arrow.arrow-prev.js-contacts-arrow-prev
+                                svg 
+                                    use(xlink:href="assets/stack/sprite.svg#arrow")
+                            .slick-arrow.arrow-next.js-contacts-arrow-next
+                                svg 
+                                    use(xlink:href="assets/stack/sprite.svg#arrow")
 
         .row 
             .col-12.col.md-6.col-lg-4

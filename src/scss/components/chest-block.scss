@@ -4,6 +4,15 @@
     @include desktop {
         padding: 40px 0;
     }
+    @include mobile {
+        position: relative;
+        padding-bottom: 80px;
+        .btn {
+            position: absolute;
+            bottom: 16px;
+            width: calc(100% - 32px);
+        }
+    }
     &:nth-child(2n) {
         & > div:first-child {
             order: 2;
