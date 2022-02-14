@@ -15,6 +15,9 @@
                 bottom: 32px;
                 left: 32px;
             }
+            @include mobile {
+                padding-right: 55px;
+            }
         }
         &-link {
             font-size: 16px;
@@ -28,7 +31,16 @@
         }
         &.--shadow {   
             & > a {
-                box-shadow: 0px -115px 40px -24px rgba(0,0,0,.3) inset;
+                box-shadow: 0px -115px 40px -24px rgba(0, 0, 0, .3) inset;
+                img {
+                    position: relative;
+                    z-index: -2;
+                }
+            }
+        }
+        &.--shadow-blue {   
+            & > a {
+                box-shadow: 0px -115px 40px -24px rgba($secondary-color,.5) inset;
                 img {
                     position: relative;
                     z-index: -2;
